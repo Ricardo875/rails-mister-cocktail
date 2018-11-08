@@ -12,7 +12,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body style="background-image: url(assets/menu.jpg);">
+  <body style="background-image: url(<%= image_url "menu.jpg" %>);">
     <%= yield %>
     <%= javascript_include_tag "application" %>
     <%= javascript_pack_tag "application" %>

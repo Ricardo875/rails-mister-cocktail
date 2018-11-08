@@ -1,13 +1,20 @@
-<div class="container">
-  <h1 class="text-center">Our Cocktails</h1>
+<div class="home-banner">
+  <h1 class="text-center">Best Cocktails</h1>
+</div>
+
+<div class="container" >
+  <div class="row">
+
+      <div data-aos="fade-right"><h4 class="text-center">Classics, innovatives, unusals who never fall out of favor.</h4>
+
+  </div>
+
   <br><br>
   <div class="row">
     <% @cocktails.each do |cocktail| %>
 
     <div class="col-xs-12 col-sm-4">
           <h2><%= cocktail.name %></h2>
-          <p><%= cocktail.address %></p>
-          <p><%= cocktail.category.capitalize %></p>
         <%= link_to "More", cocktail_path(cocktail)%>
     </div>
     <% end %>
@@ -16,10 +23,11 @@
   <h4 class="text-center"><%= link_to "Add a cocktail", cocktail_path("new")%></h4>
 </div>
 
+ <br><br>
 <hr>
 <div class="text-center padded" id="newsletter">
-  <h2>Stay in touch!</h2>
-  <p>Leave us your mail and get news from us</p>
+  <h2>Stay in touch</h2>
+  <p>Leave your mail to receive our latest additions</p>
   <form class="form-inline">
     <input type="email" placeholder="martini@gmail.com" class="form-control">
     <input type="submit" value="Subscribe" class="btn btn-primary btn-bordered btn-bordered-primary">
