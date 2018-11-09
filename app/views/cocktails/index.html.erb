@@ -4,27 +4,29 @@
 
 <div class="container" >
   <div class="row">
+    <div data-aos="fade-right"><h4 class="text-center">Classic, innovative, unusual cocktails who never fall out of favor.</h4>
+    </div>
+    <br><br>
 
-      <div data-aos="fade-right"><h4 class="text-center">Classic, innovative, unusual cocktails who never fall out of favor.</h4>
-
-  </div>
-
-  <br><br>
-  <div class="row">
-    <% @cocktails.each do |cocktail| %>
-
-    <div class="col-xs-12 col-sm-4">
-          <h2><%= cocktail.name %></h2>
-        <%= link_to "More", cocktail_path(cocktail)%>
+    <div class="row">
+      <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12 col-sm-4">
+        <%= link_to cocktail_path(cocktail) do  %>
+        <h2><%= cocktail.name %></h2>
+          <%= cl_image_tag cocktail.photo, height: 200, width: 300, crop: :fill %>
+          <% end %>
     </div>
     <% end %>
   </div>
   <br><br>
+
   <h4 class="text-center"><%= link_to "Add a cocktail", cocktail_path("new")%></h4>
 </div>
 
- <br><br>
+<br><br>
+
 <hr>
+
 <div class="text-center padded" id="newsletter">
   <h2>Stay in touch</h2>
   <p>Leave your mail to receive our latest additions</p>
