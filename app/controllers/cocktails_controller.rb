@@ -3,6 +3,10 @@ class CocktailsController < ApplicationController
 
   def index
     @cocktails = Cocktail.all
+    search = params["cocktailsearch"]
+    type_search = params["type"]
+    @cocktails = Type.find_by(name: type_search).cocktails unless type_search.nil? || type_search.empty?
+    @cocktails = @cocktails.where("name LIKE ?", "%#{search}%") unless search.nil? || search.empty?
   end
 
   def show
