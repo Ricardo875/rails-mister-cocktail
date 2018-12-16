@@ -1,0 +1,24 @@
+<div class="navbar-wagon navbar-fixed-top">
+  <!-- Logo -->
+  <a href="/" class="navbar-wagon-brand">
+    <%= image_tag "logo.png", alt: "Cocktail Aspirante" %>
+  </a>
+
+  <!-- Right Side Navigation -->
+  <div class="navbar-wagon-right">
+    <div class="search-form">
+      <form action="/" class="form-inline">
+        <select id="type" name="type" class="form-control">
+          <option value="">Select a type</option>
+          <% Type.all.pluck(:name).each do |type| %>
+            <option value="<%= type %>"><%= type %></option>
+          <% end %>
+        </select>
+        <input type="text" name="cocktailsearch" placeholder="Cocktail to search" class="form-control">
+        <input type="submit" value="Search" class="btn btn-primary">
+      </form>
+    </div>
+    <%= link_to 'Add a cocktail', new_cocktail_path, class: 'btn btn-success' %>
+  </div>
+
+</div>
