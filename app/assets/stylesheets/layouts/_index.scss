@@ -3,3 +3,13 @@
 // @import "dashboard";
 // @import "profile";
 // @import "map";
+
+@import "cocktail";
+
+.cocktails-container {
+  h1 {
+    color: $light-gray;
+  }
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
