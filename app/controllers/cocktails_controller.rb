@@ -15,6 +15,7 @@ class CocktailsController < ApplicationController
   end
 
   def new
+    @type = Type.new
     @cocktail = Cocktail.new
   end
 
