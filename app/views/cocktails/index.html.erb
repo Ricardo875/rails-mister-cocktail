@@ -12,7 +12,6 @@
           <div class="card-description">
             <h2><%= cocktail.name %></h2>
           </div>
-          <%= image_tag("pregnant.png", class: "card-user") unless cocktail.type.name == "Alcoholic" %>
           <%= link_to "", cocktail_path(cocktail), class: "card-link" %>
         </div>
       </div>
