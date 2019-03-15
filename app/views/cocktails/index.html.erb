@@ -2,25 +2,26 @@
   <h1 class="text-center">Aspirante</h1>
 </div>
 
-<div class="container" >
+<div class="background">
+    <div class="empty"></div>
+
+<div class="container">
   <div class="row">
-  <% @cocktails.each do |cocktail| %>
-      <div class="col-xs-12 col-sm-4">
-        <% cocktail.image.present? ? url = cl_image_path(cocktail.image, height: 300, width: 400, crop: :fill) : url = "https://images.unsplash.com/photo-1509669803555-fd5edd8d5a41?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=453ba52ad7b512705656a61f78bd11ad&auto=format&fit=crop&w=1950&q=80" %>
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= url %>');">
-          <div class="card-category"> <%= cocktail.ingredients.size %> ingredient<%= "s" if cocktail.ingredients.size > 1  %></div>
-          <div class="card-description">
-            <h2><%= cocktail.name %></h2>
+    <% @cocktails.each do |cocktail| %>
+    <div class="col-xs-12 col-sm-4">
+        <div> <%= link_to cocktail_path(cocktail) do %>
+
+          <div class="card" style="background-image: linear-gradient(rgba(180,209,31,0.2), rgba(255,242,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+            <div class="card-category">Super choice</div>
+            <div class="card-description">
+              <h2> <%= cocktail.name %> </h2>
+            </div>
           </div>
-          <%= link_to "", cocktail_path(cocktail), class: "card-link" %>
+
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div> <% end %>
   </div>
-  </div>
-  <br><br>
-
-
 </div>
 
 <br><br>
