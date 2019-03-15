@@ -1,73 +1,45 @@
-
 <h1 style="padding-top: 16vh;"><%= @cocktail.name %> details</h1>
 
 <div class="cocktail-container">
-
-
-<p style="padding-bottom: 40px;">Please perform the following actions to make the <%= @cocktail.name %>. You'll need to follow them carefully, otherwise you'll not get so drunk! 😂</p>
+  <p style="padding-bottom: 40px;">Please perform the following actions to make the <%= @cocktail.name %>. You'll need to follow them carefully, otherwise you'll not get so drunk! 😂</p>
 
   <div class="cocktail-grid">
-
     <div class="cocktail-image-container">
       <%= cl_image_tag @cocktail.photo, height: 300, width: 300, crop: :fill, class:"cocktail-image"%>
     </div>
   <% if @cocktail.doses.empty? %>
 
-
-<!--
-
-<% @cocktail.image.present? ? url = cl_image_path(@cocktail.image, crop: :fill) : url = "https://images.unsplash.com/photo-1509669803555-fd5edd8d5a41?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=453ba52ad7b512705656a61f78bd11ad&auto=format&fit=crop&w=1950&q=80" %>
-<div class="cocktail-picture" style="background-image: url(<%= url %>)"></div>
-
-
-<div class="container cocktail-container">
-  <%= @cocktail.type.name == "Alcoholic" ? image_tag("alcohol.png", class: "cocktail-type") : image_tag("pregnant.png", class: "cocktail-type") %>
-  <div class="row text-center">
-      <h1><%= @cocktail.name %></h1>
-      <div class="col-xs-10 col-xs-offset-1">
-        <div class="cocktail-instructions">
-          <p><em>Type:</em> <%= @cocktail.type.name %></p>
-          <p><strong>Instructions:</strong> <%= @cocktail.instructions%></p>
-        </div>
-      </div>
-  </div>
-  <hr>
-  <div class="row">
-    <div class="col-xs-6 col-sm-4 col-sm-offset-2">
-      <div class="cocktail-content">
-        <p><em>Doses:</em></p>
-        <ul>
-          <% @cocktail.doses.each do |dose| %>
-            <li>
-              <%= dose.ingredient.name %>: <%= dose.description %>
-              <%= link_to "<i class='far fa-trash-alt'></i>".html_safe, dose_path(dose),
-                method: :delete,
-                data: { confirm: "Are you sure?" } %>
-            </li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-    <div class="col-xs-6 col-sm-4"">
-      <div class="newdose-form">
-        <%= render 'doses/formdose', dose: @dose, cocktail: @cocktail %>
-      </div>
-    </div>
-  </div>
+<div>
+  <h6> <%= @cocktail.name %> ingredients: </h6>
+  <p> There's no ingredients for this cocktail yet. Add some below! </p>
 </div>
-<div class="container review-container">
-  <div class="review-average-rating">
-    <p>Average rating: <%= @cocktail.reviews.average(:rating).nil? ? "not yet rated" : "#{@cocktail.reviews.average(:rating)}/5" %></p>
-    <p>Number of reviews : <%= @cocktail.reviews.size %></p>
-  </div>
-  <div class="newreview-form">
-    <%= render 'reviews/form_review', review: @review, cocktail: @cocktail %>
-  </div>
-  <ul>
-    <% @cocktail.reviews.each do |review| %>
-    <li>
-      <%= review.rating %> /5 : <%= review.content %>
-    </li>
-    <% end %>
-  </ul>
-</div> -->
+
+<div>
+  <h6> <%= @cocktail.name %> doses: </h6>
+  <p> There's no ingredients for this cocktail yet. Add some below! </p>
+</div>
+
+<% else %>
+
+<% @cocktail.doses.each do |dose| %>
+
+<div>
+  <strong>Ingredient:</strong>
+  <p> <%= dose.ingredient.name %> </p>
+</div>
+
+<div>
+  <strong>Doses:</strong>
+  <p> <%= dose.description %> </p>
+</div>
+
+<% end %>
+<% end %>
+</div>
+
+<div class="empty"></div>
+<p>How about add a dose and get even more drunk? 😵😵</p>
+
+<div class="new-button"> <p class="btn btn-success"><%= link_to "Add now!", new_cocktail_dose_path(@cocktail) %></p></div>
+<div class="new-button"> <p class="btn btn-info"><%= link_to "Back home", root_path %></p></div>
+</div>
