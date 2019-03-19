@@ -10,5 +10,8 @@
   padding: 10px 24px;
   text-decoration: none;
   box-shadow: 1px 1px rgba(120, 120, 120, 0.1);
+  &:hover {
+    background: rgb(150, 179, 1);
+    border: 1px solid rgb(150, 179, 1);
   }
 }
