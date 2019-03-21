@@ -11,6 +11,8 @@
 .cocktail-description {
   list-style-type: none;
   padding: 0px;
+  border: 1px solid rgba(20, 20, 20, 0.1);
+  border-radius: 4px;
 }
 
 .cocktail-row {
@@ -26,4 +28,8 @@
   background: rgba(255, 255, 253, 0.4);
   align-items: center;
   padding: 6px 20px;
+  p {
+    margin: 0px;
+    padding: 0px;
+  }
 }
