@@ -17,3 +17,13 @@
   text-decoration: none;
   margin: 4px;
 }
+
+.footer {
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  background: rgba(255, 255, 253, 0.4);
+  align-items: center;
+  padding: 6px 20px;
+}
