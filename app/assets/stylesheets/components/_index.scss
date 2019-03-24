@@ -3,3 +3,13 @@
 @import "navbar";
 @import "card";
 @import "banner";
+@import "fonts";
+@import "buttons";
+@import "divs";
+@import "grid";
+
+body {
+  background: linear-gradient(rgba(180,209,31,0.3), rgba(248, 131, 121, 0.3));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
