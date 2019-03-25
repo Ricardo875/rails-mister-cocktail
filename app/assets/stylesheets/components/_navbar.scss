@@ -12,6 +12,8 @@
 
 .navbar-wagon-white {
   background-color: white;
+  background: rgba(253, 253, 253, 0.96);
+
 }
 
 /* Logo */
@@ -31,9 +33,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  .search-form {
-    margin-right: 5px;
-  }
 }
 
 
